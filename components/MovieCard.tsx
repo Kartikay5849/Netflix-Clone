@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import  {useRouter}  from 'next/router';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { PlayIcon } from '@heroicons/react/24/solid';
-
+import PluralButton from './PluralButton';
 
 interface MovieCardProps {
   data: Record<string,any>;
@@ -16,7 +16,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
 
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">
-      
+
       <img onClick={redirectToWatch} src={data.thumbnailUrl} alt="Movie" draggable={false} className="
         cursor-pointer
         object-cover
@@ -72,7 +72,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             <div onClick={redirectToWatch} className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-white rounded-full flex justify-center items-center transition hover:bg-neutral-300">
               <PlayIcon className="text-black w-4 lg:w-6" />
             </div>
-            {/* <FavoriteButton movieId={data.id} /> */}
+            <PluralButton movieId={data?.id} />
             {/* <div onClick={() => openModal(data?.id)} className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300">
               <ChevronDownIcon className="text-white group-hover/item:text-neutral-300 w-4 lg:w-6" />
             </div> */}

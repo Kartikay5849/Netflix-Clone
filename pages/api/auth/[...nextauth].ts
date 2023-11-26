@@ -64,4 +64,7 @@ export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET
 };
 
-export default NextAuth(authOptions);
+const authHandler = NextAuth(authOptions);
+export default async function handler(...params: any[]) {
+  await authHandler(...params);
+}
