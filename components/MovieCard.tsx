@@ -12,7 +12,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   const router = useRouter();
 //   const { openModal } = useInfoModalStore();
 
-  const redirectToWatch = useCallback(() => router.push(`/watch/${data.id}`), [router, data.id]);
+  const redirectToWatch = useCallback(() => router.push(`/watch/${data?.id}`), [router, data.id]);
 
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">

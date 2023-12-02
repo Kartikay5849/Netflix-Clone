@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 import { PlayIcon } from '@heroicons/react/24/solid';
 import { useRouter } from 'next/router';
 
-interface PlayButtonProps{
-    movieId:string
+interface PlayButtonProps {
+  movieId: string;
 }
 
+const PlayButton: React.FC<PlayButtonProps> = ({ movieId }) => {
+  const router = useRouter();
 
-const PlayButton:React.FC<PlayButtonProps> = ({movieId}) => {
-    const router =useRouter();
   return (
     <button 
       onClick={() => router.push(`/watch/${movieId}`)}
