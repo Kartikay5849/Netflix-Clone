@@ -1,7 +1,7 @@
 import useBillboard from '@/hooks/useBillboard'
 import React from 'react'
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
-
+import PlayButton from './PlayButton';
 const Billboard = () => {
     const {data }=useBillboard();
     return (
@@ -16,6 +16,7 @@ const Billboard = () => {
             </p>
             <div className="flex flex-row items-center mt-3 md:mt-4 gap-3">
             {/*   <button movieId={data?.id} />*/}
+            <PlayButton movieId={data?.id} />
               <button
                 // onClick={handleOpenModal}
                 className="
