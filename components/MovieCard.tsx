@@ -3,14 +3,14 @@ import  {useRouter}  from 'next/router';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { PlayIcon } from '@heroicons/react/24/solid';
 import PluralButton from './PluralButton';
-
+import useInfoModalStore from '@/hooks/useInfoModalStore';
 interface MovieCardProps {
   data: Record<string,any>;
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   const router = useRouter();
-//   const { openModal } = useInfoModalStore();
+  const { openModal } = useInfoModalStore();
 
   const redirectToWatch = useCallback(() => router.push(`/watch/${data?.id}`), [router, data.id]);
 
@@ -73,9 +73,9 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
               <PlayIcon className="text-black w-4 lg:w-6" />
             </div>
             <PluralButton movieId={data?.id} />
-            {/* <div onClick={() => openModal(data?.id)} className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300">
+            <div onClick={() => openModal(data?.id)} className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300">
               <ChevronDownIcon className="text-white group-hover/item:text-neutral-300 w-4 lg:w-6" />
-            </div> */}
+            </div>
           </div>
           <p className="text-green-400 font-semibold mt-4">
             New <span className="text-white">2023</span>
