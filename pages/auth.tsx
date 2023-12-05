@@ -25,7 +25,7 @@ export async function getServerSideProps(context: NextPageContext) {
   }
 }
 
-const auth = () => {
+const Auth = () => {
   const router = useRouter();
 
   const [email, setEmail] = useState('');
@@ -128,4 +128,4 @@ const auth = () => {
   );
 }
 
-export default auth;
+export default Auth;
